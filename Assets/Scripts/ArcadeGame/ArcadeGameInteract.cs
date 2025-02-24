@@ -1,0 +1,28 @@
+using UnityEngine;
+
+public class ArcadeGameInteract : MonoBehaviour, ITriggered
+{
+    private bool _inTriggerZone;
+    private PlayerInput _playerInput;
+    private ArcadeGame _currentGame;
+
+    private void Awake() => _playerInput = GetComponent<PlayerInput>();
+    private void OnEnable() => _playerInput.OnActionPerformed += StartGame;
+    private void OnDisable() => _playerInput.OnActionPerformed -= StartGame;
+
+    public void OnEnter(MonoBehaviour triggerObject)
+    {
+        _inTriggerZone = true;
+        if (triggerObject.TryGetComponent(out ArcadeGame arcadeGame))
+            _currentGame = arcadeGame;
+    } 
+    public void OnExit(MonoBehaviour triggerObject) => _inTriggerZone = false;
+
+    private void StartGame()
+    {
+        if (_currentGame == null || !_inTriggerZone)
+            return;
+        
+        _currentGame.StartGame();
+    }
+}
