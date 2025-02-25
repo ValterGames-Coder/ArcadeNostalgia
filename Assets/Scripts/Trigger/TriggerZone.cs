@@ -12,6 +12,6 @@ public class TriggerZone : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.TryGetComponent(out ITriggered trigger))
-            trigger.OnExit(this);
+            trigger.OnExit();
     }
 }

@@ -16,7 +16,7 @@ public class ArcadeGameInteract : MonoBehaviour, ITriggered
         if (triggerObject.TryGetComponent(out ArcadeGame arcadeGame))
             _currentGame = arcadeGame;
     } 
-    public void OnExit(MonoBehaviour triggerObject) => _inTriggerZone = false;
+    public void OnExit() => _inTriggerZone = false;
 
     private void StartGame()
     {
