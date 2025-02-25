@@ -22,7 +22,16 @@ public class ArcadeGameInteract : MonoBehaviour, ITriggered
     {
         if (_currentGame == null || !_inTriggerZone)
             return;
-        
+
+        _playerInput.enabled = false;
+        _currentGame.GetInput().OnExit += EndGame;
         _currentGame.StartGame();
+    }
+
+    private void EndGame()
+    {
+        _playerInput.enabled = true;
+        _currentGame.GetInput().OnExit -= EndGame;
+        _currentGame.EndGame();
     }
 }

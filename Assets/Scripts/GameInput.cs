@@ -131,9 +131,27 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             ""id"": ""1303716b-15d8-4d08-97ad-0e7cfa91ca3b"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""Exit"",
                     ""type"": ""Button"",
                     ""id"": ""207fc06c-3b53-4b36-a674-0de91d78b673"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""76209c79-9981-4986-84fc-ceb28502099e"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""5c98b78e-525d-4a2c-8cad-c1c48de5fd56"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -144,11 +162,132 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""76e0c7b9-b38b-4a17-b3ce-7cd912c4fa6f"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""78ba5848-6b24-4a5c-8402-46e93deddce7"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""1d9302d0-806f-4f0e-b4e4-43fa785b7736"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""3cff27ce-98fd-4bad-b124-49208658a227"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b868d4b8-a6dc-4e7f-88ba-3632c849aa5b"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""a2ecf88a-e8af-4308-a4b0-f5b743f5e364"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""948166d2-a730-44a9-b6e8-4ecc52c7a03a"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""d7eb0abf-548b-49c2-aa23-638758ead14f"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""63137c73-c1ca-4155-bf60-32eee190d33b"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""c04f62f7-635b-4244-b0ac-c89dcf893a7c"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""5bf2435f-5203-4bc4-ba36-20e01ee8dc1c"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b17f8d0d-c665-45e1-8fe3-e59212a57fef"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -163,7 +302,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         m_Player_Action = m_Player.FindAction("Action", throwIfNotFound: true);
         // Arcade
         m_Arcade = asset.FindActionMap("Arcade", throwIfNotFound: true);
-        m_Arcade_Newaction = m_Arcade.FindAction("New action", throwIfNotFound: true);
+        m_Arcade_Exit = m_Arcade.FindAction("Exit", throwIfNotFound: true);
+        m_Arcade_Movement = m_Arcade.FindAction("Movement", throwIfNotFound: true);
+        m_Arcade_Action = m_Arcade.FindAction("Action", throwIfNotFound: true);
     }
 
     ~@GameInput()
@@ -285,12 +426,16 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     // Arcade
     private readonly InputActionMap m_Arcade;
     private List<IArcadeActions> m_ArcadeActionsCallbackInterfaces = new List<IArcadeActions>();
-    private readonly InputAction m_Arcade_Newaction;
+    private readonly InputAction m_Arcade_Exit;
+    private readonly InputAction m_Arcade_Movement;
+    private readonly InputAction m_Arcade_Action;
     public struct ArcadeActions
     {
         private @GameInput m_Wrapper;
         public ArcadeActions(@GameInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_Arcade_Newaction;
+        public InputAction @Exit => m_Wrapper.m_Arcade_Exit;
+        public InputAction @Movement => m_Wrapper.m_Arcade_Movement;
+        public InputAction @Action => m_Wrapper.m_Arcade_Action;
         public InputActionMap Get() { return m_Wrapper.m_Arcade; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -300,16 +445,28 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_ArcadeActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_ArcadeActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
+            @Exit.started += instance.OnExit;
+            @Exit.performed += instance.OnExit;
+            @Exit.canceled += instance.OnExit;
+            @Movement.started += instance.OnMovement;
+            @Movement.performed += instance.OnMovement;
+            @Movement.canceled += instance.OnMovement;
+            @Action.started += instance.OnAction;
+            @Action.performed += instance.OnAction;
+            @Action.canceled += instance.OnAction;
         }
 
         private void UnregisterCallbacks(IArcadeActions instance)
         {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
+            @Exit.started -= instance.OnExit;
+            @Exit.performed -= instance.OnExit;
+            @Exit.canceled -= instance.OnExit;
+            @Movement.started -= instance.OnMovement;
+            @Movement.performed -= instance.OnMovement;
+            @Movement.canceled -= instance.OnMovement;
+            @Action.started -= instance.OnAction;
+            @Action.performed -= instance.OnAction;
+            @Action.canceled -= instance.OnAction;
         }
 
         public void RemoveCallbacks(IArcadeActions instance)
@@ -334,6 +491,8 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     }
     public interface IArcadeActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
+        void OnMovement(InputAction.CallbackContext context);
+        void OnAction(InputAction.CallbackContext context);
     }
 }

@@ -14,7 +14,11 @@ public class PlayerInput : MonoBehaviour
         _gameInput.Player.Enable();
     }
     private void OnEnable() => _gameInput.Player.Action.performed += OnActionPerformedMethod;
-    private void OnDisable() => _gameInput.Player.Action.performed -= OnActionPerformedMethod;
+    private void OnDisable()
+    {
+        _gameInput.Player.Action.performed -= OnActionPerformedMethod;
+        MovementValue = 0;
+    }
     private void FixedUpdate() => MovementValue = _gameInput.Player.Movement.ReadValue<float>();
     private void OnActionPerformedMethod(InputAction.CallbackContext callback)
         => OnActionPerformed?.Invoke();

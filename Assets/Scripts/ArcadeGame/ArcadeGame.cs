@@ -1,6 +1,28 @@
+using System;
 using UnityEngine;
 
-public class ArcadeGame : MonoBehaviour
+public abstract class ArcadeGame : MonoBehaviour
 {
-    public void StartGame() { Debug.Log("Arcade Game Start");}
+    [SerializeField] private GameObject arcadeGameObject;
+    [SerializeField] private ArcadeGameHolder gameHolder;
+    protected ArcadeGameInput _arcadeGameInput;
+    public Action OnExitPerformed;
+
+    private void Awake()
+    {
+        _arcadeGameInput = GetComponent<ArcadeGameInput>();
+    }
+
+    public ArcadeGameInput GetInput() => _arcadeGameInput;
+
+    public void StartGame() 
+    {
+        gameHolder.Open(this);
+        _arcadeGameInput.EnableInput();
+    }
+
+    public void EndGame()
+    {
+        gameHolder.Close(this);
+    }
 }
