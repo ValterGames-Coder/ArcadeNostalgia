@@ -5,21 +5,26 @@ namespace BattleShipGame
 {
     public class Ship : MonoBehaviour
     {
-        private Image _spriteRenderer;
-        private float _speed;
-        private Vector3 _direction;
-
-        public void Init(Sprite sprite, float speed, Vector3 direction)
+        private ShipConfig _shipConfig;
+        private Image _imageRenderer;
+        
+        public void Init(ShipConfig shipConfig)
         {
-            _spriteRenderer = GetComponent<Image>();
-            _speed = speed;
-            _direction = direction;
-            _spriteRenderer.sprite = sprite;
+            _imageRenderer ??= GetComponent<Image>();
+            _shipConfig = shipConfig;
+            _imageRenderer.sprite = _shipConfig.shipImage;
         }
 
         public void Update()
         {
-            transform.Translate(_direction * _speed);
+            transform.Translate(Vector2.right * (_shipConfig.speed * Time.deltaTime));
         }
+    }
+
+    [System.Serializable]
+    public struct ShipConfig
+    {
+        public float speed;
+        public Sprite shipImage;
     }
 }
