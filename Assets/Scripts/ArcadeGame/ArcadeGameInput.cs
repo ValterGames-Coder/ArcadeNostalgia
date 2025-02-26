@@ -26,10 +26,10 @@ public class ArcadeGameInput : MonoBehaviour
     
     private void OnExitPerformed(InputAction.CallbackContext context)
     {
+        OnExit?.Invoke();
         _gameInput.Arcade.Exit.performed -= OnExitPerformed;
         _gameInput.Arcade.Action.performed -= OnActionPerformed;
         Movement = Vector2.zero;
         _gameInput.Arcade.Disable();
-        OnExit?.Invoke();
     }
 }
