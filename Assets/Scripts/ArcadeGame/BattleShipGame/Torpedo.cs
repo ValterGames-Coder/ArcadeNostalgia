@@ -7,10 +7,13 @@ namespace BattleShipGame
     {
         private Ship _ship;
         [SerializeField] private Transform startPosition, endPosition;
-        
-        public void Shoot(Ship ship)
+
+        public void Init(Ship ship) => _ship = ship;
+
+        public void Shoot()
         {
-            _ship ??= ship;
+            if (_ship == null) 
+                return;
             DOTween.Sequence()
                 .Append(transform.DOMove(endPosition.position, 3f).SetEase(Ease.Linear))
                 .AppendCallback(() => Debug.Log("Shoot"))

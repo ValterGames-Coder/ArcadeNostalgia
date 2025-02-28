@@ -12,12 +12,13 @@ namespace BattleShipGame
         private Ship _currentShip;
 
         private float _maxMoveX;
-        private int _points;
+        //private int _points;
 
         private void Start()
         {
             _currentShip = shipSpawner.GetShip();
-            _arcadeGameInput.OnAction += () => torpedo.Shoot(_currentShip);
+            torpedo.Init(_currentShip);
+            _arcadeGameInput.OnAction += () => torpedo.Shoot();
             _arcadeGameInput.OnExit += () => shipSpawner.StopMove();
             _maxMoveX = (map.rect.width - canvas.rect.width) / 2;
         }
